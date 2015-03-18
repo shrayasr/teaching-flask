@@ -26,5 +26,14 @@ def customers():
             print e
             return redirect(url_for("customers"))
 
+@app.route("/customers/<cust_id>/")
+def customer(cust_id):
+    try:
+        cust = list_of_customers[int(cust_id)]
+        return render_template("customer.html", customer=cust)
+    except Exception as e:
+        print e
+        return render_template("customer.html", customer=None)
+
 if __name__ == "__main__":
     app.run(debug=True)

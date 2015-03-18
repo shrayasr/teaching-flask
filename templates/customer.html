@@ -1,0 +1,9 @@
+{% if customer %}
+  <h1>{{customer}}</h1>
+{% else %}
+  Sorry customer not found
+{% endif %}
+
+<hr/>
+
+Back to <a href="{{url_for("customers")}}">customers</a> 
